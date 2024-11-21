@@ -127,3 +127,19 @@ func GetGoI2PLogger() *Logger {
 func init() {
 	InitializeGoI2PLogger()
 }
+
+var (
+	PanicLevel = logrus.PanicLevel
+	FatalLevel = logrus.FatalLevel
+	ErrorLevel = logrus.ErrorLevel
+	WarnLevel  = logrus.WarnLevel
+	InfoLevel  = logrus.InfoLevel
+	DebugLevel = logrus.DebugLevel
+	TraceLevel = logrus.TraceLevel
+)
+
+func New() *Logger {
+	l := &Logger{}
+	l.Logger = logrus.New()
+	return l
+}
