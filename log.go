@@ -26,9 +26,11 @@ type Entry struct {
 	entry *logrus.Entry
 }
 
+type Fields logrus.Fields
+
 // Warn wraps logrus.Warn and logs a fatal error if failFast is set
 func (l *Logger) Warn(args ...interface{}) {
-	warnFatal(args)
+	warnFatal(args...)
 	l.Logger.Warn(args...)
 }
 
@@ -40,7 +42,7 @@ func (l *Logger) Warnf(format string, args ...interface{}) {
 
 // Error wraps logrus.Error and logs a fatal error if failFast is set
 func (l *Logger) Error(args ...interface{}) {
-	warnFatal(args)
+	warnFatal(args...)
 	l.Logger.Error(args...)
 }
 
@@ -70,13 +72,23 @@ func (l *Logger) WithError(err error) *Entry {
 
 func warnFatal(args ...interface{}) {
 	if failFast != "" {
-		log.Fatal(args)
+		if log != nil {
+			log.Fatal(args...)
+		} else {
+			// Fallback to os.Exit if log is not initialized
+			panic("Logger not initialized but fast-fail mode enabled")
+		}
 	}
 }
 
 func warnFatalf(format string, args ...interface{}) {
 	if failFast != "" {
-		log.Fatalf(format, args...)
+		if log != nil {
+			log.Fatalf(format, args...)
+		} else {
+			// Fallback to os.Exit if log is not initialized
+			panic("Logger not initialized but fast-fail mode enabled")
+		}
 	}
 }
 
