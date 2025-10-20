@@ -59,8 +59,8 @@ func (l *Logger) WithField(key string, value interface{}) *Entry {
 }
 
 // WithFields wraps logrus.WithFields and returns an Entry
-func (l *Logger) WithFields(fields logrus.Fields) *Entry {
-	entry := l.Logger.WithFields(fields)
+func (l *Logger) WithFields(fields Fields) *Entry {
+	entry := l.Logger.WithFields(logrus.Fields(fields))
 	return &Entry{*l, entry}
 }
 
