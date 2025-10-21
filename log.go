@@ -78,6 +78,14 @@ func (l *Logger) SetLevel(level Level) {
 	l.Logger.SetLevel(logrus.Level(level))
 }
 
+func (l *Logger) GetLevel() Level {
+	return Level(l.Logger.GetLevel())
+}
+
+func (l *Logger) SetFormatter(formatter *TextFormatter) {
+	l.Logger.SetFormatter((*logrus.TextFormatter)(formatter))
+}
+
 func warnFatal(args ...interface{}) {
 	if failFast != "" {
 		if log != nil {
