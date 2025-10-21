@@ -28,6 +28,8 @@ type Entry struct {
 
 type Fields logrus.Fields
 
+type Level logrus.Level
+
 // Warn wraps logrus.Warn and logs a fatal error if failFast is set
 func (l *Logger) Warn(args ...interface{}) {
 	warnFatal(args...)
@@ -70,6 +72,10 @@ func (l *Logger) WithError(err error) *Entry {
 	return &Entry{*l, entry}
 }
 
+func (l *Logger) SetLevel(level Level) {
+	l.Logger.SetLevel(logrus.Level(level))
+}
+
 func warnFatal(args ...interface{}) {
 	if failFast != "" {
 		if log != nil {
@@ -105,7 +111,7 @@ func InitializeGoI2PLogger() {
 		log.Logger = logrus.New()
 		// We do not want to log by default
 		log.SetOutput(io.Discard)
-		log.SetLevel(logrus.PanicLevel)
+		log.SetLevel(PanicLevel)
 		// Check if DEBUG_I2P is set
 		if logLevel := os.Getenv("DEBUG_I2P"); logLevel != "" {
 			failFast = os.Getenv("WARNFAIL_I2P")
@@ -115,13 +121,13 @@ func InitializeGoI2PLogger() {
 			log.SetOutput(os.Stdout)
 			switch strings.ToLower(logLevel) {
 			case "debug":
-				log.SetLevel(logrus.DebugLevel)
+				log.SetLevel(DebugLevel)
 			case "warn":
-				log.SetLevel(logrus.WarnLevel)
+				log.SetLevel(WarnLevel)
 			case "error":
-				log.SetLevel(logrus.ErrorLevel)
+				log.SetLevel(ErrorLevel)
 			default:
-				log.SetLevel(logrus.DebugLevel)
+				log.SetLevel(DebugLevel)
 			}
 			log.WithField("level", log.GetLevel()).Debug("Logging enabled.")
 		}
@@ -141,13 +147,13 @@ func init() {
 }
 
 var (
-	PanicLevel = logrus.PanicLevel
-	FatalLevel = logrus.FatalLevel
-	ErrorLevel = logrus.ErrorLevel
-	WarnLevel  = logrus.WarnLevel
-	InfoLevel  = logrus.InfoLevel
-	DebugLevel = logrus.DebugLevel
-	TraceLevel = logrus.TraceLevel
+	PanicLevel Level = Level(logrus.PanicLevel)
+	FatalLevel Level = Level(logrus.FatalLevel)
+	ErrorLevel Level = Level(logrus.ErrorLevel)
+	WarnLevel  Level = Level(logrus.WarnLevel)
+	InfoLevel  Level = Level(logrus.InfoLevel)
+	DebugLevel Level = Level(logrus.DebugLevel)
+	TraceLevel Level = Level(logrus.TraceLevel)
 )
 
 func New() *Logger {
