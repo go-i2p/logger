@@ -171,3 +171,19 @@ func New() *Logger {
 	l.Logger = logrus.New()
 	return l
 }
+
+// WithFields creates a new Entry with the specified fields
+// INEFFICIENT - use Logger.WithFields instead
+func WithFields(fields Fields) *Entry {
+	l := GetGoI2PLogger()
+	entry := l.Logger.WithFields(logrus.Fields(fields))
+	return &Entry{*l, entry}
+}
+
+// WithField creates a new Entry with the specified field
+// INEFFICIENT - use Logger.WithField instead
+func WithField(key string, value interface{}) *Entry {
+	l := GetGoI2PLogger()
+	entry := l.Logger.WithField(key, value)
+	return &Entry{*l, entry}
+}
