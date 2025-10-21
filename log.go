@@ -30,6 +30,8 @@ type Fields logrus.Fields
 
 type Level logrus.Level
 
+type TextFormatter logrus.TextFormatter
+
 // Warn wraps logrus.Warn and logs a fatal error if failFast is set
 func (l *Logger) Warn(args ...interface{}) {
 	warnFatal(args...)
