@@ -127,9 +127,12 @@ func InitializeGoI2PLogger() {
 			ForceColors:     false,
 			DisableColors:   false,
 			FieldMap: logrus.FieldMap{
-				logrus.FieldKeyTime:  "time",
-				logrus.FieldKeyLevel: "level",
-				logrus.FieldKeyMsg:   "msg",
+				logrus.FieldKeyTime:        "time",
+				logrus.FieldKeyLevel:       "level",
+				logrus.FieldKeyMsg:         "msg",
+				logrus.FieldKeyLogrusError: "logrus_error",
+				logrus.FieldKeyFunc:        "func",
+				logrus.FieldKeyFile:        "file",
 			},
 		})
 
