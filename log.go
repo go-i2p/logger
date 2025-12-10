@@ -119,6 +119,20 @@ func InitializeGoI2PLogger() {
 	once.Do(func() {
 		log = &Logger{}
 		log.Logger = logrus.New()
+
+		// Configure TextFormatter to include all structured fields
+		log.SetFormatter(&TextFormatter{
+			FullTimestamp:   true,
+			TimestampFormat: "2006-01-02 15:04:05",
+			ForceColors:     false,
+			DisableColors:   false,
+			FieldMap: logrus.FieldMap{
+				logrus.FieldKeyTime:  "time",
+				logrus.FieldKeyLevel: "level",
+				logrus.FieldKeyMsg:   "msg",
+			},
+		})
+
 		// We do not want to log by default
 		log.SetOutput(io.Discard)
 		log.SetLevel(PanicLevel)
