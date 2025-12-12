@@ -86,6 +86,90 @@ func (l *Logger) SetFormatter(formatter *TextFormatter) {
 	l.Logger.SetFormatter((*logrus.TextFormatter)(formatter))
 }
 
+// Entry methods that delegate to the underlying logrus.Entry
+
+// Debug logs a debug message with the entry's fields
+func (e *Entry) Debug(args ...interface{}) {
+	e.entry.Debug(args...)
+}
+
+// Debugf logs a formatted debug message with the entry's fields
+func (e *Entry) Debugf(format string, args ...interface{}) {
+	e.entry.Debugf(format, args...)
+}
+
+// Info logs an info message with the entry's fields
+func (e *Entry) Info(args ...interface{}) {
+	e.entry.Info(args...)
+}
+
+// Infof logs a formatted info message with the entry's fields
+func (e *Entry) Infof(format string, args ...interface{}) {
+	e.entry.Infof(format, args...)
+}
+
+// Warn logs a warning message with the entry's fields and checks failFast
+func (e *Entry) Warn(args ...interface{}) {
+	warnFatal(args...)
+	e.entry.Warn(args...)
+}
+
+// Warnf logs a formatted warning message with the entry's fields and checks failFast
+func (e *Entry) Warnf(format string, args ...interface{}) {
+	warnFatalf(format, args...)
+	e.entry.Warnf(format, args...)
+}
+
+// Error logs an error message with the entry's fields and checks failFast
+func (e *Entry) Error(args ...interface{}) {
+	warnFatal(args...)
+	e.entry.Error(args...)
+}
+
+// Errorf logs a formatted error message with the entry's fields and checks failFast
+func (e *Entry) Errorf(format string, args ...interface{}) {
+	warnFatalf(format, args...)
+	e.entry.Errorf(format, args...)
+}
+
+// Fatal logs a fatal message with the entry's fields and exits
+func (e *Entry) Fatal(args ...interface{}) {
+	e.entry.Fatal(args...)
+}
+
+// Fatalf logs a formatted fatal message with the entry's fields and exits
+func (e *Entry) Fatalf(format string, args ...interface{}) {
+	e.entry.Fatalf(format, args...)
+}
+
+// Panic logs a panic message with the entry's fields and panics
+func (e *Entry) Panic(args ...interface{}) {
+	e.entry.Panic(args...)
+}
+
+// Panicf logs a formatted panic message with the entry's fields and panics
+func (e *Entry) Panicf(format string, args ...interface{}) {
+	e.entry.Panicf(format, args...)
+}
+
+// WithField adds a field to the entry and returns a new Entry
+func (e *Entry) WithField(key string, value interface{}) *Entry {
+	newEntry := e.entry.WithField(key, value)
+	return &Entry{e.Logger, newEntry}
+}
+
+// WithFields adds multiple fields to the entry and returns a new Entry
+func (e *Entry) WithFields(fields Fields) *Entry {
+	newEntry := e.entry.WithFields(logrus.Fields(fields))
+	return &Entry{e.Logger, newEntry}
+}
+
+// WithError adds an error field to the entry and returns a new Entry
+func (e *Entry) WithError(err error) *Entry {
+	newEntry := e.entry.WithError(err)
+	return &Entry{e.Logger, newEntry}
+}
+
 func warnFatal(args ...interface{}) {
 	if failFast != "" {
 		if log != nil {
@@ -124,10 +208,11 @@ func InitializeGoI2PLogger() {
 			TimestampFormat:        "2006-01-02 15:04:05",
 			ForceColors:            false,
 			DisableColors:          false,
-			DisableQuote:           false,
+			DisableQuote:           true,
 			DisableTimestamp:       false,
 			DisableSorting:         false,
 			DisableLevelTruncation: false,
+			QuoteEmptyFields:       true,
 			FieldMap: logrus.FieldMap{
 				logrus.FieldKeyTime:        "time",
 				logrus.FieldKeyLevel:       "level",
