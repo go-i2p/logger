@@ -1,6 +1,6 @@
 module github.com/go-i2p/logger
 
-go 1.26.1
+go 1.26.3
 
 require github.com/sirupsen/logrus v1.9.4
 
