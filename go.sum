@@ -1,15 +1,5 @@
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc h1:U9qPSI2PIWSS1VwoXQT9A3Wy9MM3WgvqSxFWenqJduM=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/go-i2p/common v0.1.60000-0.20260630222658-15751a11a45e h1:zWAdCpIExAhxpQJRGGpJxNKMZQ6c8AH4/x26quQF5sQ=
-github.com/go-i2p/common v0.1.60000-0.20260630222658-15751a11a45e/go.mod h1:l3AIEyt1uEr70VYoIiTQh0QnMCVcbGE5pJ0emkwIh6s=
-github.com/go-i2p/crypto v0.1.60000-0.20260630222545-de94e58f0e78 h1:SExHdmQ1w/J0Uuk9ll70fBv8XcpBI1mUuIxsnEpwmas=
-github.com/go-i2p/crypto v0.1.60000-0.20260630222545-de94e58f0e78/go.mod h1:VdrVcyf8Rbt9zyixqIsU6yKz3mqtkyiFy5scpibKT1Q=
-github.com/go-i2p/elgamal v0.1.62 h1:ZF5a9vcCz7+ov4j+wibTnKizrJ+rWE2JMAb/Q5MNp74=
-github.com/go-i2p/elgamal v0.1.62/go.mod h1:doBqsiGCnCL7TzgKr+mJnfodAD7i5wEWMpap0qgKsAw=
-github.com/go-i2p/noise v0.1.62 h1:kpgtO5Y2vICxAvWq0zFpGZRwrmQf4xsTYiLV+/8UbpM=
-github.com/go-i2p/noise v0.1.62/go.mod h1:/79lUu1iKd1yW+zqLI7QjY2MUpsGkGStKM7XVDxPeEc=
-github.com/go-i2p/su3 v0.1.60000-0.20260701023342-822c65cd244a h1:A7+ffW9s3X5Fo8wQ7YqTjU2fH+yisiKCzPEaIaW3Buo=
-github.com/go-i2p/su3 v0.1.60000-0.20260701023342-822c65cd244a/go.mod h1:p5soUTnuC+sALD3A/ao8z+DoEJw7onqMZy8OFQoTsx4=
 github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 h1:Jamvg5psRIccs7FGNTlIRMkT8wgtp5eCXdBlqhYGL6U=
 github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/sirupsen/logrus v1.9.4 h1:TsZE7l11zFCLZnZ+teH4Umoq5BhEIfIzfRDZ1Uzql2w=
