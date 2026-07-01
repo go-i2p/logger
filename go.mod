@@ -13,9 +13,10 @@ require (
 	github.com/go-i2p/crypto v0.1.60000-0.20260630222545-de94e58f0e78 // indirect
 	github.com/go-i2p/elgamal v0.1.59999 // indirect
 	github.com/go-i2p/go-nat-listener v0.1.62 // indirect
-	github.com/go-i2p/go-noise v0.1.57-0.20260606221722-3782ee7a1cc8 // indirect
-	github.com/go-i2p/noise v0.1.62 // indirect
+	github.com/go-i2p/go-noise v0.1.60000-0.20260701023741-378fb24ce3e7 // indirect
+	github.com/go-i2p/noise v1.1.1-0.20260612013029-6d1ef3427561 // indirect
 	github.com/go-i2p/path v0.1.60000-0.20260701024803-f84897415fbe // indirect
+	github.com/go-i2p/pool v0.1.60000-0.20260701024803-1cb9658f5256 // indirect
 	github.com/go-i2p/red25519 v0.0.0-20260302212615-1093a31f680d // indirect
 	github.com/go-i2p/su3 v0.1.60000-0.20260701023342-822c65cd244a // indirect
 	github.com/huin/goupnp v1.3.0 // indirect
