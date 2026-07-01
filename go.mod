@@ -10,3 +10,9 @@ require (
 	github.com/stretchr/testify v1.11.1 // indirect
 	golang.org/x/sys v0.46.0 // indirect
 )
+
+//replace github.com/go-i2p/go-i2p => /home/idk/go/src/github.com/go-i2p/go-i2p
+
+//replace github.com/go-i2p/go-i2p => /home/idk/go/src/github.com/go-i2p/go-i2p
+
+replace github.com/go-i2p/go-i2p => /home/idk/go/src/github.com/go-i2p/go-i2p
