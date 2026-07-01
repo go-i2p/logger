@@ -4,6 +4,8 @@ github.com/cespare/xxhash/v2 v2.3.0 h1:UL815xU9SqsFlibzuggzjXhog7bL6oX9BbNZnL2UF
 github.com/cespare/xxhash/v2 v2.3.0/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc h1:U9qPSI2PIWSS1VwoXQT9A3Wy9MM3WgvqSxFWenqJduM=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/dchest/siphash v1.2.3 h1:QXwFc8cFOR2dSa/gE6o/HokBMWtLUaNDVd+22aKHeEA=
+github.com/dchest/siphash v1.2.3/go.mod h1:0NvQU092bT0ipiFN++/rXm69QG9tVxLAlQHIXMPAkHc=
 github.com/go-i2p/common v0.1.59 h1:cQnbhlCqgLnRNA7aCdYrl/8EpvWVdc1ua53kvHmNbTc=
 github.com/go-i2p/common v0.1.59/go.mod h1:86pk779Mvn3CKt7hkfZUcWXgDPKexAy08SY74K6Vuag=
 github.com/go-i2p/common v0.1.60000-0.20260630222658-15751a11a45e h1:zWAdCpIExAhxpQJRGGpJxNKMZQ6c8AH4/x26quQF5sQ=
@@ -18,8 +20,14 @@ github.com/go-i2p/elgamal v0.1.59999 h1:zK/PL82556guw9OTwIUeyEXtrekLqFEfur4T/7EL
 github.com/go-i2p/elgamal v0.1.59999/go.mod h1:doBqsiGCnCL7TzgKr+mJnfodAD7i5wEWMpap0qgKsAw=
 github.com/go-i2p/go-nat-listener v0.1.62 h1:zdk8blH5yXydYlppq6NX/y0H803B3iJkcMp1nNebGiM=
 github.com/go-i2p/go-nat-listener v0.1.62/go.mod h1:grAvt54cQEIfhOH4xwTGSWHgXtUyf0co9HlWDccj64E=
+github.com/go-i2p/go-noise v0.1.59999 h1:VWHlUNeQ7r1iTkP4FVNnXtko1VAqjpmM7Vw8ilaylhE=
+github.com/go-i2p/go-noise v0.1.59999/go.mod h1:KORJHx+6h7Czf/W6xQFUtEu5u33CyBMLsHsak+Pz6gk=
 github.com/go-i2p/noise v0.1.62 h1:kpgtO5Y2vICxAvWq0zFpGZRwrmQf4xsTYiLV+/8UbpM=
 github.com/go-i2p/noise v0.1.62/go.mod h1:/79lUu1iKd1yW+zqLI7QjY2MUpsGkGStKM7XVDxPeEc=
+github.com/go-i2p/noise v1.1.1-0.20260327201800-8e41bb3d9f1e h1:RUdNl2UXCZAGYaEHlthIpyvnjgq4kTI5adRxGpXV7FM=
+github.com/go-i2p/noise v1.1.1-0.20260327201800-8e41bb3d9f1e/go.mod h1:/tnXnzZXdjSLxU5lKMCKDDFKi9WUcsd7llNBSvyynJo=
+github.com/go-i2p/path v0.1.60000-0.20260701024803-f84897415fbe h1:o/bmdpAK8bWAISiy1/DGvG+S3LdBT1ypfwaLGFTqr6Y=
+github.com/go-i2p/path v0.1.60000-0.20260701024803-f84897415fbe/go.mod h1:WMl3be0LaLeO8mZI69WOsDy4QiBI3Mx2LNHfsQVGgKI=
 github.com/go-i2p/red25519 v0.0.0-20260302212615-1093a31f680d h1:a7DHsr9SOEjybZVtH3e0kJpXy40mZb1V+dGm9tptOl8=
 github.com/go-i2p/red25519 v0.0.0-20260302212615-1093a31f680d/go.mod h1:6bX00E8eUkSstzG2c8L4MIuL6pX5VCYjcWjBVOMXk0M=
 github.com/go-i2p/su3 v0.1.599 h1:Yr2bOJD6rF/gD3W3BKA8384PoRKZBKF70bpN3zNf6Y4=
