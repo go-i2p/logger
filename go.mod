@@ -15,4 +15,6 @@ require (
 
 //replace github.com/go-i2p/go-i2p => /home/idk/go/src/github.com/go-i2p/go-i2p
 
+//replace github.com/go-i2p/go-i2p => /home/idk/go/src/github.com/go-i2p/go-i2p
+
 replace github.com/go-i2p/go-i2p => /home/idk/go/src/github.com/go-i2p/go-i2p
