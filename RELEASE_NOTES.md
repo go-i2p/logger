@@ -1,4 +1,4 @@
-Release notes for: `logger` Version `0.1.67`
+Release notes for: `logger` Version `0.1.68`
 ==============================================
 
 This release establishes the RELEASE_NOTES.md file for the logger package.
